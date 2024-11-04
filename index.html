@@ -5,7 +5,7 @@
 
 body {
     font: 14px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #045398 0%, #00f2fe 100%);
+    background: linear-gradient(to bottom, #00f2fe 0%, #2c2cd8 100%);
     text-align: center;
     color: #333;
 }
@@ -35,13 +35,13 @@ h1, h2, p {
 
 h1 {
     font-size: 28px;
-    color: #ffffff;
+    color: #770e0e;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 h2 {
     font-size: 24px;
-    color: #ffffff;
+    color: #560e0e;
 }
 
 path {
@@ -89,17 +89,37 @@ p {
 
 <h1> CS-GY 6313 B: Information Visualization </h1>
 <h2> Interactive World Ocean Atlas </h2>
-<p>This visualization shows temperature and salinity data from the <a href="https://www.ncei.noaa.gov/access/world-ocean-atlas-2023/">World Ocean Atlas 2023 dataset.</a> All of the data shown are average values from 2015-2022. The background maps are generated using surface values binned at 1&deg; resolution. Clickable locations are at 5&deg; increments.
-</p>
+<p>This interactive visualization presents averaged temperature and salinity data sourced from the <a href="https://www.ncei.noaa.gov/access/world-ocean-atlas-2023/">World Ocean Atlas 2023 dataset</a>. The dataset provides a statistical mean of ocean measurements, calculated over decades, and mapped across a global 5° grid. Background maps depict surface-level temperature and salinity values, while clickable locations, spaced at 5° intervals, allow users to explore these variables in specific regions and depths of the ocean.</p>
 
 
-<!-- Add button div -->
+
+<style>
+    /* Button styling */
+    #toggleButton {
+        background-color: #20c1b6; /* Green background */
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    #toggleButton:hover {
+        background-color: #45a049; /* Darker green on hover */
+        transform: scale(1.05); /* Slight scale on hover */
+    }
+</style>
+
 <div id="option">
-	<input name="updateButton"
-			type="button"
-			value="Toggle Temperature/Salinity Map"
-			onclick="updateImage()" />
+    <button id="toggleButton" onclick="updateImage()">Switch Between Temperature and Salinity Maps</button>
 </div>
+
 
 
 
